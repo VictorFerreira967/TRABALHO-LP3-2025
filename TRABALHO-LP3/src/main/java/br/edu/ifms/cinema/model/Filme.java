@@ -10,6 +10,7 @@ package br.edu.ifms.cinema.model;
  */
 
 
+import java.util.LinkedList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -34,7 +35,7 @@ public class Filme {
     private String classificacao;
 
     @OneToMany(mappedBy = "filme", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Sessao> sessoes;
+    private List<Sessao> sessoes = new LinkedList<>();
 
     public Long getId() {
         return id;
@@ -108,5 +109,9 @@ public class Filme {
     @Override
     public String toString() {
         return "br.edu.ifms.cinema.model.exemplo[ id=" + id + " ]";
+    }
+
+    public Object getSessao() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
