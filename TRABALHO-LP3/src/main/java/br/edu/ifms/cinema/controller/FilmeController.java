@@ -4,11 +4,11 @@
  */
 package br.edu.ifms.cinema.controller;
 
-import be.edu.ifms.cinema.dto.FilmeRequestDTO;
-import be.edu.ifms.cinema.dto.FilmeResponseDTO;
-import be.edu.ifms.cinema.dto.SessaoRequestDTO;
-import be.edu.ifms.cinema.dto.SessaoResponseDTO;
-import be.edu.ifms.cinema.mapper.SessaoMap;
+import br.edu.ifms.cinema.dto.FilmeRequestDTO;
+import br.edu.ifms.cinema.dto.FilmeResponseDTO;
+import br.edu.ifms.cinema.dto.SessaoRequestDTO;
+import br.edu.ifms.cinema.dto.SessaoResponseDTO;
+import br.edu.ifms.cinema.mapper.SessaoMap;
 import br.edu.ifms.cinema.dao.FilmeDAO;
 import br.edu.ifms.cinema.dao.GenericDAO;
 import br.edu.ifms.cinema.model.Filme;

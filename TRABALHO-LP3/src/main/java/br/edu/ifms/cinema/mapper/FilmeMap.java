@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package be.edu.ifms.cinema.mapper;
+package br.edu.ifms.cinema.mapper;
 
-import be.edu.ifms.cinema.dto.FilmeRequestDTO;
-import be.edu.ifms.cinema.dto.FilmeResponseDTO;
+import br.edu.ifms.cinema.dto.FilmeRequestDTO;
+import br.edu.ifms.cinema.dto.FilmeResponseDTO;
 import br.edu.ifms.cinema.model.Filme;
 
 

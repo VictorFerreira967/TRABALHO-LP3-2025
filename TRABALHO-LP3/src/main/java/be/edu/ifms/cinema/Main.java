@@ -4,10 +4,10 @@
  */
 package be.edu.ifms.cinema;
 
-import be.edu.ifms.cinema.dto.FilmeRequestDTO;
-import be.edu.ifms.cinema.dto.FilmeResponseDTO;
-import be.edu.ifms.cinema.dto.SessaoRequestDTO;
-import be.edu.ifms.cinema.dto.SessaoResponseDTO;
+import br.edu.ifms.cinema.dto.FilmeRequestDTO;
+import br.edu.ifms.cinema.dto.FilmeResponseDTO;
+import br.edu.ifms.cinema.dto.SessaoRequestDTO;
+import br.edu.ifms.cinema.dto.SessaoResponseDTO;
 import br.edu.ifms.cinema.controller.FilmeController;
 import java.time.LocalDateTime;
 import javax.swing.JOptionPane;

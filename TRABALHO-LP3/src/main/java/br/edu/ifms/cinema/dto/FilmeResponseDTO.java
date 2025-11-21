@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package be.edu.ifms.cinema.dto;
+package br.edu.ifms.cinema.dto;
 
 import br.edu.ifms.cinema.model.Sessao;
 import java.util.LinkedList;
@@ -12,22 +12,23 @@ import java.util.List;
  *
  * @author victor ferreira
  */
-public class FilmeRequestDTO {
-     private Long id;
+public class FilmeResponseDTO {
+    private long id;
     private String titulo;
     private String genero;
     private Integer duracaoMinutos;
     private String classificacao;
-     private List<SessaoRequestDTO> sessoes = new LinkedList<>();
-    
-    
-    
+    private List<SessaoResponseDTO> sessoes = new LinkedList<>();
+    private boolean status;
+    private String message;
+     
+         
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -63,12 +64,28 @@ public class FilmeRequestDTO {
         this.classificacao = classificacao;
     }
 
-    public List<SessaoRequestDTO> getSessoes() {
+    public List<SessaoResponseDTO> getSessoes() {
         return sessoes;
     }
 
-    public void setSessoes(List<SessaoRequestDTO> sessoes) {
+    public void setSessoes(List<SessaoResponseDTO> sessoes) {
         this.sessoes = sessoes;
     }
-   
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+    
 }
