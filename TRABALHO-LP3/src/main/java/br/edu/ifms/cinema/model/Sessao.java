@@ -32,12 +32,12 @@ public class Sessao {
     @JoinColumn(name = "filme_id", nullable = false)
     private Filme filme;
 
-    @ManyToOne()
-    @JoinColumn(name = "sala_id", nullable = false)
-    private Sala sala;
+//    @ManyToOne
+//    @JoinColumn(name = "sala_id")
+//    private Sala sala;
 
-    @OneToMany(mappedBy = "sessao", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Ingresso> ingressos;
+//    @OneToMany(mappedBy = "sessao", cascade = CascadeType.REMOVE, orphanRemoval = true)
+//    private List<Ingresso> ingressos;
 
     public Long getId() {
         return id;
@@ -63,22 +63,22 @@ public class Sessao {
         this.filme = filme;
     }
 
-    public Sala getSala() {
-        return sala;
-    }
+//    public Sala getSala() {
+//        return sala;
+//    }
+//
+//    public void setSala(Sala sala) {
+//        this.sala = sala;
+//    }
 
-    public void setSala(Sala sala) {
-        this.sala = sala;
-    }
-
-    public List<Ingresso> getIngressos() {
-        return ingressos;
-    }
-
-    public void setIngressos(List<Ingresso> ingressos) {
-        this.ingressos = ingressos;
-    }
-    
+//    public List<Ingresso> getIngressos() {
+//        return ingressos;
+//    }
+//
+//    public void setIngressos(List<Ingresso> ingressos) {
+//        this.ingressos = ingressos;
+//    }
+//    
     
     
     @Override

@@ -31,8 +31,8 @@ public class Sala {
     @OneToMany(mappedBy = "sala", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Assento> assentos;
 
-    @OneToMany(mappedBy = "sala", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Sessao> sessoes;
+//    @OneToMany(mappedBy = "sala")
+//    private List<Sessao> sessoes;
 
     public Long getId() {
         return id;
@@ -66,13 +66,13 @@ public class Sala {
         this.assentos = assentos;
     }
 
-    public List<Sessao> getSessoes() {
-        return sessoes;
-    }
-
-    public void setSessoes(List<Sessao> sessoes) {
-        this.sessoes = sessoes;
-    }
+//    public List<Sessao> getSessoes() {
+//        return sessoes;
+//    }
+//
+//    public void setSessoes(List<Sessao> sessoes) {
+//        this.sessoes = sessoes;
+//    }
     
     
     

@@ -19,39 +19,41 @@ public class CartaoFidelidadeDAO implements GenericDAO<CartaoFidelidade> {
     private EntityManager em;
     
     @Override
-    public void add(CartaoFidelidade entity) {
+    public boolean add(CartaoFidelidade entity) {
         em = EntityManagerObjectFactory.getEM();
         try {
             em.getTransaction().begin();
             em.persist(entity);
             em.getTransaction().commit();
+            return true;
         } catch (Exception e) {
             System.err.println(e.getMessage());
             em.getTransaction().rollback();
+            return false;
         } finally {
             em.close();
         }
     }
 
     @Override
-    public CartaoFidelidade update(CartaoFidelidade entity) {
+    public boolean update(CartaoFidelidade entity) {
         em = EntityManagerObjectFactory.getEM();
         try {
             em.getTransaction().begin();
             em.merge(entity);
             em.getTransaction().commit();
-            return entity;
+            return true;
         } catch (Exception e) {
             System.err.println(e.getMessage());
             em.getTransaction().rollback();
-            return entity;
+            return false;
         } finally {
             em.close();
         }
     }
 
     @Override
-    public void remove(CartaoFidelidade entity) {
+    public boolean remove(CartaoFidelidade entity) {
         em = EntityManagerObjectFactory.getEM();
         try {
             if(em.find(CartaoFidelidade.class, entity.getId()) == null)
@@ -59,9 +61,11 @@ public class CartaoFidelidadeDAO implements GenericDAO<CartaoFidelidade> {
             em.getTransaction().begin();
             em.remove(entity);
             em.getTransaction().commit();
+            return true;
         } catch (Exception e) {
             System.err.println(e.getMessage());
             em.getTransaction().rollback();
+            return false;
         } finally {
             em.close();
         }

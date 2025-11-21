@@ -18,7 +18,7 @@ public class FilmeRequestDTO {
     private String genero;
     private Integer duracaoMinutos;
     private String classificacao;
-     private List<SessaoResquestDTO> sessoes = new LinkedList<>();
+     private List<SessaoRequestDTO> sessoes = new LinkedList<>();
     
     
     
@@ -63,11 +63,11 @@ public class FilmeRequestDTO {
         this.classificacao = classificacao;
     }
 
-    public List getSessoes() {
+    public List<SessaoRequestDTO> getSessoes() {
         return sessoes;
     }
 
-    public void setSessoes(List sessoes) {
+    public void setSessoes(List<SessaoRequestDTO> sessoes) {
         this.sessoes = sessoes;
     }
    

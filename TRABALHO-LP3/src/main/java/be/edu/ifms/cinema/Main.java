@@ -4,56 +4,57 @@
  */
 package be.edu.ifms.cinema;
 
-import br.edu.ifms.cinema.model.Filme;
-import br.edu.ifms.cinema.model.Sessao;
+import be.edu.ifms.cinema.dto.FilmeRequestDTO;
+import be.edu.ifms.cinema.dto.FilmeResponseDTO;
+import be.edu.ifms.cinema.dto.SessaoRequestDTO;
+import be.edu.ifms.cinema.dto.SessaoResponseDTO;
+import br.edu.ifms.cinema.controller.FilmeController;
+import java.time.LocalDateTime;
+import javax.swing.JOptionPane;
+
+
 
 /**
  *
  * @author victor ferreira
  */
 public class Main {
-    public static void main(String[] args) {
-        Filme f1 = new Filme();
-        Filme f2 = new Filme();
-        Filme f3 = new Filme();
+   public static void main(String[] args) {
+        FilmeRequestDTO request = new FilmeRequestDTO();
+        request.setTitulo("Matrix");
+        request.setGenero("SCI-FI");
+        request.setDuracaoMinutos(202);
+        request.setClassificacao("Livre");
         
-        f1.setGenero("A volta do indiano");
-        f1.setGenero("Açao");
-        f1.setDuracaoMinutos(144);
-        f1.setClassificacao("18");
+        SessaoRequestDTO sessao = new SessaoRequestDTO();
+        sessao.setFilme(request);
+        sessao.setHorario(LocalDateTime.of(2025,11,18,15,30));
+        request.getSessoes().add(sessao);
+
+        SessaoRequestDTO sessao2 = new SessaoRequestDTO();
+        sessao2.setFilme(request);
+        sessao2.setHorario(LocalDateTime.of(2025,11,18,18,50));
+        request.getSessoes().add(sessao2);
         
-        f2.setGenero("Divertidade");
-        f2.setGenero("Animacao");
-        f2.setDuracaoMinutos(144);
-        f2.setClassificacao("Livre");
-        
-        f3.setGenero("whalle");
-        f3.setGenero("Animacao");
-        f3.setDuracaoMinutos(180);
-        f3.setClassificacao("Livre");
-        
-        Sessao s1 = new Sessao();
-        Sessao s2 = new Sessao();
-        Sessao s3 = new Sessao();
-        Sessao s4 = new Sessao();
-        
-        s1.setHorario(localDataTime.of(2025, 11, 11 14, 00));
-        s1.setFilme(f2);
-        
-        s2.setHorario(localDataTime.of(2025, 11, 11 14, 00));
-        s1.setFilme(f2);
-        
-        s3.setHorario(localDataTime.of(2025, 11, 11 14, 00));
-        s3.setFilme(f2);
-        
-        s4.setHorario(localDataTime.of(2025, 11, 11 14, 00));
-        s4.setFilme(f2);
-        
-        
-        f1.getSessao().add(s4);
-        f2.getSessao().add(s4);
-        f3.getSessao().add(s4);
-        f4.getSessao().add(s4);
+        FilmeController controle = new FilmeController();
+        FilmeResponseDTO response = controle.add(request);
+        if(response.isStatus()){
+            JOptionPane.showMessageDialog(null,response.getMessage(),"Cadastrado Com Sucesso", JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("Filme");
+            System.out.println("ID: "+ response.getId());
+            System.out.println("Título: "+ response.getTitulo());
+            System.out.println("Gênero: "+ response.getGenero());
+            System.out.println("Duração: (min.): "+ response.getDuracaoMinutos());
+            System.out.println("Classificação: "+ response.getClassificacao());
+            System.out.println("Sessões: ");
+            for (SessaoResponseDTO sessaoResp : response.getSessoes()) {
+                System.out.println("Id: "+ sessaoResp.getId());
+                System.out.println("Horário: "+ sessaoResp.getHorario());
+                System.out.println("----------------------------");
+            }
+        }else{
+            JOptionPane.showMessageDialog(null,response.getMessage(),"Falha no Cadastro", JOptionPane.ERROR_MESSAGE);
+        }
         
         
     }

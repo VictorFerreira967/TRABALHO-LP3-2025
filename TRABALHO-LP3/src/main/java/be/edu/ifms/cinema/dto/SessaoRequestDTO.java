@@ -4,14 +4,17 @@
  */
 package be.edu.ifms.cinema.dto;
 
+
+import java.time.LocalDateTime;
+
 /**
  *
  * @author victor ferreira
  */
-public class SessaoResquestDTO {
+public class SessaoRequestDTO {
     private Long id;
     private LocalDateTime horario;
-    private long idfilme;
+    private FilmeRequestDTO filme;
 
     public Long getId() {
         return id;
@@ -29,16 +32,16 @@ public class SessaoResquestDTO {
         this.horario = horario;
     }
 
-    public long getIdfilme() {
-        return idfilme;
+    public FilmeRequestDTO getFilme() {
+        return filme;
     }
 
-    public void setIdfilme(long idfilme) {
-        this.idfilme = idfilme;
+    public void setFilme(FilmeRequestDTO filme) {
+        this.filme = filme;
     }
+
+   
     
-    
-    
-    
-    
-}
+
+  
+    }

@@ -19,39 +19,41 @@ public class SalaDAO implements GenericDAO<Sala> {
     private EntityManager em;
     
     @Override
-    public void add(Sala entity) {
+    public boolean add(Sala entity) {
         em = EntityManagerObjectFactory.getEM();
         try {
             em.getTransaction().begin();
             em.persist(entity);
             em.getTransaction().commit();
+            return true;
         } catch (Exception e) {
             System.err.println(e.getMessage());
             em.getTransaction().rollback();
+            return false;
         } finally {
             em.close();
         }
     }
 
     @Override
-    public Sala update(Sala entity) {
+    public boolean update(Sala entity) {
         em = EntityManagerObjectFactory.getEM();
         try {
             em.getTransaction().begin();
             em.merge(entity);
             em.getTransaction().commit();
-            return entity;
+            return true;
         } catch (Exception e) {
             System.err.println(e.getMessage());
             em.getTransaction().rollback();
-            return entity;
+            return false;
         } finally {
             em.close();
         }
     }
 
     @Override
-    public void remove(Sala entity) {
+    public boolean remove(Sala entity) {
         em = EntityManagerObjectFactory.getEM();
         try {
             if(em.find(Sala.class, entity.getId()) == null)
@@ -59,9 +61,11 @@ public class SalaDAO implements GenericDAO<Sala> {
             em.getTransaction().begin();
             em.remove(entity);
             em.getTransaction().commit();
+            return true;
         } catch (Exception e) {
             System.err.println(e.getMessage());
             em.getTransaction().rollback();
+            return false;
         } finally {
             em.close();
         }
