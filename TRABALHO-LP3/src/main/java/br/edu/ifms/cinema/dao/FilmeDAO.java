@@ -27,9 +27,11 @@ public class FilmeDAO implements GenericDAO<Filme> {
             em.getTransaction().commit();
             return true;
         } catch (Exception e) {
+            if(em.getTransaction().isActive())
+                em.getTransaction().rollback();
             System.err.println(e.getMessage());
-            em.getTransaction().rollback();
-            return false;
+            throw new RuntimeException("falha ao alterar os dados");
+            sessaoDTO
         } finally {
             em.close();
         }

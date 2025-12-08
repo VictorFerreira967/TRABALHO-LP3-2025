@@ -21,23 +21,24 @@ import javax.swing.JOptionPane;
 public class Main {
    public static void main(String[] args) {
         FilmeRequestDTO request = new FilmeRequestDTO();
-        request.setTitulo("Matrix");
-        request.setGenero("SCI-FI");
+        request.setId(4L);
+        request.setTitulo("Efeito Borboleta");
+        request.setGenero("ficção");
         request.setDuracaoMinutos(202);
-        request.setClassificacao("Livre");
+        request.setClassificacao("16");
         
-        SessaoRequestDTO sessao = new SessaoRequestDTO();
-        sessao.setFilme(request);
-        sessao.setHorario(LocalDateTime.of(2025,11,18,15,30));
-        request.getSessoes().add(sessao);
-
-        SessaoRequestDTO sessao2 = new SessaoRequestDTO();
-        sessao2.setFilme(request);
-        sessao2.setHorario(LocalDateTime.of(2025,11,18,18,50));
-        request.getSessoes().add(sessao2);
+//        SessaoRequestDTO sessao = new SessaoRequestDTO();
+//        sessao.setFilme(request);
+//        sessao.setHorario(LocalDateTime.of(2025,11,18,15,30));
+//        request.getSessoes().add(sessao);
+//
+//        SessaoRequestDTO sessao2 = new SessaoRequestDTO();
+//        sessao2.setFilme(request);
+//        sessao2.setHorario(LocalDateTime.of(2025,11,18,18,50));
+//        request.getSessoes().add(sessao2);
         
         FilmeController controle = new FilmeController();
-        FilmeResponseDTO response = controle.add(request);
+        FilmeResponseDTO response = controle.update(request);
         if(response.isStatus()){
             JOptionPane.showMessageDialog(null,response.getMessage(),"Cadastrado Com Sucesso", JOptionPane.INFORMATION_MESSAGE);
             System.out.println("Filme");
