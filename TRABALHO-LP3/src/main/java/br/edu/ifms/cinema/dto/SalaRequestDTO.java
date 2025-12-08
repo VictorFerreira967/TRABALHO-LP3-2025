@@ -8,11 +8,10 @@ package br.edu.ifms.cinema.dto;
  *
  * @author victor ferreira
  */
-public class ClienteResponseDTO {
+public class SalaRequestDTO {
     private long id;
     private String nome;
-    private String email;
-    private String telefone;
+    private Integer capacidade;
 
     public long getId() {
         return id;
@@ -30,22 +29,12 @@ public class ClienteResponseDTO {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public Integer getCapacidade() {
+        return capacidade;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCapacidade(Integer capacidade) {
+        this.capacidade = capacidade;
     }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-    
-    
     
 }

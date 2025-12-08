@@ -31,7 +31,7 @@ public class FilmeDAO implements GenericDAO<Filme> {
                 em.getTransaction().rollback();
             System.err.println(e.getMessage());
             throw new RuntimeException("falha ao alterar os dados");
-            sessaoDTO
+            // o que vai aqui??
         } finally {
             em.close();
         }

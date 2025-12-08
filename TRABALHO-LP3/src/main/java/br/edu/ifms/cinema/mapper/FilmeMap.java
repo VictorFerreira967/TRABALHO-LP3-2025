@@ -6,11 +6,7 @@ package br.edu.ifms.cinema.mapper;
 
 import br.edu.ifms.cinema.dto.FilmeRequestDTO;
 import br.edu.ifms.cinema.dto.FilmeResponseDTO;
-import br.edu.ifms.cinema.dto.SessaoResponseDTO;
 import br.edu.ifms.cinema.model.Filme;
-
-
-
 
 /**
  *
