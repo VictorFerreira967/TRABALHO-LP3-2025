@@ -6,10 +6,8 @@ package be.edu.ifms.cinema;
 
 import br.edu.ifms.cinema.dto.FilmeRequestDTO;
 import br.edu.ifms.cinema.dto.FilmeResponseDTO;
-import br.edu.ifms.cinema.dto.SessaoRequestDTO;
 import br.edu.ifms.cinema.dto.SessaoResponseDTO;
 import br.edu.ifms.cinema.controller.FilmeController;
-import java.time.LocalDateTime;
 import javax.swing.JOptionPane;
 
 
@@ -19,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author victor ferreira
  */
 public class Main {
-   public static void main(String[] args) {
+    public static void main(String[] args) {
         FilmeRequestDTO request = new FilmeRequestDTO();
         request.setId(4L);
         request.setTitulo("Efeito Borboleta");
@@ -38,7 +36,8 @@ public class Main {
 //        request.getSessoes().add(sessao2);
         
         FilmeController controle = new FilmeController();
-        FilmeResponseDTO response = controle.update(request);
+        // CORREÇÃO: Adicionado o ID do filme na chamada do método update.
+        FilmeResponseDTO response = controle.update(request.getId(), request); 
         if(response.isStatus()){
             JOptionPane.showMessageDialog(null,response.getMessage(),"Cadastrado Com Sucesso", JOptionPane.INFORMATION_MESSAGE);
             System.out.println("Filme");

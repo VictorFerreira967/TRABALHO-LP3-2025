@@ -12,7 +12,7 @@ public class CartaoFidelidadeResponseDTO {
     private long id;
     private Integer pontos;
     private String nivel;
-    private ClienteRequestDTO cliente;
+    private ClienteResponseDTO cliente;
 
     public long getId() {
         return id;
@@ -38,13 +38,15 @@ public class CartaoFidelidadeResponseDTO {
         this.nivel = nivel;
     }
 
-    public ClienteRequestDTO getCliente() {
+    public ClienteResponseDTO getCliente() {
         return cliente;
     }
 
-    public void setCliente(ClienteRequestDTO cliente) {
+    public void setCliente(ClienteResponseDTO cliente) {
         this.cliente = cliente;
     }
+
+
   
     
 }

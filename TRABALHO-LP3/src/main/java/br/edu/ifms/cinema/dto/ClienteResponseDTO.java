@@ -13,6 +13,8 @@ public class ClienteResponseDTO {
     private String nome;
     private String email;
     private String telefone;
+    private boolean status;
+    private String message;
 
     public long getId() {
         return id;
@@ -45,7 +47,22 @@ public class ClienteResponseDTO {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    
-    
-    
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+   
 }
