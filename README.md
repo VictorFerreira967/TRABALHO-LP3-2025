@@ -97,4 +97,4 @@ O projeto está preparado para receber uma interface gráfica real futuramente.
 
 - **Data:** 08/12/2025  
 - **Status:** ✔️ Concluído  
-- **Documentação gerada por:** Manus AI  
+- **Documentação organizada pelo nosso amigo chat
