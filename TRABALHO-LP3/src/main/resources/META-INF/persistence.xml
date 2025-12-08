@@ -4,6 +4,11 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>br.edu.ifms.cinema.model.Filme</class>
     <class>br.edu.ifms.cinema.model.Sessao</class>
+    <class>br.edu.ifms.cinema.model.Assento</class>
+    <class>br.edu.ifms.cinema.model.CartaoFidelidade</class>
+    <class>br.edu.ifms.cinema.model.Cliente</class>
+    <class>br.edu.ifms.cinema.model.Ingresso</class>
+    <class>br.edu.ifms.cinema.model.Sala</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/cinema?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
